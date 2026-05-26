@@ -1,0 +1,71 @@
+/* src/App.css */
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.header {
+  margin-bottom: 50px;
+}
+
+.header h1 {
+  font-size: 3rem;
+  color: #333;
+}
+
+.header p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.social-links h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.icon {
+  font-size: 3rem;
+  color: #555;
+  transition: transform 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+
+.youtube {
+  color: #FF0000; /* YouTube Red */
+}
+
+.instagram {
+  color: #E4405F; /* Instagram Red */
+}
+
+.linkedin {
+  color: #0077B5; /* LinkedIn Blue */
+}
+
+.footer {
+  margin-top: 50px;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.footer p {
+  font-style: italic;
+}
