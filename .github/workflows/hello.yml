@@ -12,7 +12,7 @@ jobs:
         - name: print hello world
          run: echo "hello world"
 
-        - name:run a custom script
+        - name: run a custom script
          run: |
          echo "custom script"
          mkdir -p my_dir
