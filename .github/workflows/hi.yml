@@ -1,0 +1,25 @@
+name: nodejs
+
+on:
+  push:
+    branches:
+        - main
+   
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v3
+
+      - name: setup node.jobs
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+
+      - name: Install dependencies with npm 
+        run: npm Install
+        working-directory: modules/01.Nodejs_Pipeline
+        continue-on-error: false
+
