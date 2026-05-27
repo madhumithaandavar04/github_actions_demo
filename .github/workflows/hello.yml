@@ -8,12 +8,12 @@ on:
 jobs:
   say-hello:
     runs-on: ubuntu-latest
-      steps:
-        - name: print hello world
-         run: echo "hello world"
+    steps:
+      - name: print hello world
+        run: echo "hello world"
 
-        - name: run a custom script
-         run: |
-         echo "custom script"
-         mkdir -p my_dir
-         echo "script success"
+      - name: run a custom script
+        run: |
+          echo "custom script"
+          mkdir -p my_dir
+          echo "script success"
