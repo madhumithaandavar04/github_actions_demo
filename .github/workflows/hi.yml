@@ -45,14 +45,14 @@ jobs:
                 exit 1
             fi
            
-            if [ $({ steps.run-eslint.outcome}) == "success" ]; then
+            if [ ${{ steps.run-eslint.outcome}} == "success" ]; then
                echo "❤️ eslint run successfully"
             else
                echo "failed to run eslint"
                exit 1
             fi
 
-            if [ $({ steps.run-tests.outcome}) == "success" ]; then
+            if [ ${{ steps.run-tests.outcome}} == "success" ]; then
                echo "😇 jest test run successfully"
             else
                echo "failed to run jest tests"
