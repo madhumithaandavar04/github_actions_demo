@@ -34,6 +34,20 @@ jobs:
         working-directory: modules/01.Nodejs_Pipeline
         continue-on-error: false
         id: run-tests
+      
+      - name: Install railway cli
+        run: npm i -g @railway/cli
+        working-directory: modules/01.Nodejs_Pipeline
+        continue-on-error: false
+        id: install-railway
+
+      - name: Deploy to railway
+        run: railway up --service github_action
+        env: 
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+        working-directory: modules/01.Nodejs_Pipeline
+        continue-on-error: false
+        id: deploy-to-railway
 
       - name: check success/failure message
         if: always()
@@ -54,6 +68,20 @@ jobs:
 
             if [ ${{ steps.run-tests.outcome}} == "success" ]; then
                echo "😇 jest test run successfully"
+            else
+               echo "failed to run jest tests"
+               exit 1
+            fi
+
+            if [ ${{ steps.install-railway.outcome}} == "success" ]; then
+               echo "👀 railway installed successfully"
+            else
+               echo "failed to run jest tests"
+               exit 1
+            fi
+
+            if [ ${{ steps.deploy-to-railway.outcome}} == "success" ]; then
+               echo "👏🏻 project deployed successfully"
             else
                echo "failed to run jest tests"
                exit 1
